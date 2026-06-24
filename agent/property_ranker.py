@@ -1,13 +1,4 @@
-"""
-property_ranker.py
 
-Takes the list of Listings that survived the hard filters in mls_retriever
-and produces scored, annotated ScoredListing objects.
-
-Scoring is transparent by design: every point a listing earns is captured as
-a human-readable reason, and every shortfall is captured as a gap. A realtor
-reading the brief can see exactly why listing A ranked above listing B.
-"""
 from __future__ import annotations
 
 from dataclasses import dataclass, field

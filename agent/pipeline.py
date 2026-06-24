@@ -1,21 +1,4 @@
-"""
-pipeline.py
 
-The agent loop. One function: process(inquiry, retriever) → LeadBrief.
-
-Steps, in order:
-  1. Safety scan      — injection detection (deterministic, pre-LLM)
-  2. Parse intent     — Groq extracts structured BuyerProfile
-  3. Classify lead    — property_search | investor | advice | vague | low_quality
-  4. Feasibility check— "is this budget even possible?" (tool call)
-  5. Search           — hard-filter + single-widen fallback (tool call)
-  6. Rank             — score and sort the candidates
-  7. Reason           — summary, heads-up, priority, next action
-  8. Assemble brief   — PII-free, rendered to JSON + Markdown
-
-Each step appends to a `trace` list that ships inside the brief so the
-output is auditable.
-"""
 from __future__ import annotations
 
 import re
@@ -37,7 +20,7 @@ from .safety_agent import LeadType, classify, detect_injection
 def process(inquiry: dict, retriever: MLSRetriever) -> LeadBrief:
     trace: list[str] = []
 
-    # 1. Safety scan ─────────────────────────────────────────────────────────
+    # 1. Safety scan 
     raw_text = inquiry.get("message", "")
     is_injection, snippet = detect_injection(raw_text)
     if is_injection:
@@ -45,7 +28,7 @@ def process(inquiry: dict, retriever: MLSRetriever) -> LeadBrief:
     else:
         trace.append("Safety: no injection detected.")
 
-    # 2. Parse intent (Groq) ─────────────────────────────────────────────────
+    # 2. Parse intent (Groq) 
     profile: BuyerProfile = parse(inquiry)
     trace.append(
         f"Parser: extracted beds={profile.beds_min}–{profile.beds_max}, "
@@ -58,11 +41,11 @@ def process(inquiry: dict, retriever: MLSRetriever) -> LeadBrief:
         or not inquiry.get("buyer_phone")
     )
 
-    # 3. Classify ─────────────────────────────────────────────────────────────
+    # 3. Classify 
     lead_type = classify(profile, anonymous=anonymous)
     trace.append(f"Classifier: {lead_type.value}.")
 
-    # 4. Feasibility check ───────────────────────────────────────────────────
+    # 4. Feasibility check 
     feas = retriever.feasibility(profile)
     budget_gap: int | None = None
     budget_ok = True
@@ -79,14 +62,13 @@ def process(inquiry: dict, retriever: MLSRetriever) -> LeadBrief:
     else:
         trace.append(f"Feasibility: {feas['count']} listings meet non-price criteria.")
 
-    # 5 & 6. Search + rank (only when search makes sense) ────────────────────
+    # 5 & 6. Search + rank (only when search makes sense) 
     scored, fallback_note = [], None
     context_listing: dict | None = None
 
     if lead_type in (LeadType.PROPERTY_SEARCH, LeadType.INVESTOR):
         if not budget_ok:
-            # Budget mismatch: show closest over-budget options so the
-            # realtor has something concrete to reframe expectations with.
+            
             over_budget_profile = BuyerProfile(
                 **{**profile.__dict__,
                    "budget_max": budget_gap,
@@ -117,7 +99,7 @@ def process(inquiry: dict, retriever: MLSRetriever) -> LeadBrief:
     else:
         trace.append(f"Search: skipped — {lead_type.value}.")
 
-    # 7. Reason ───────────────────────────────────────────────────────────────
+    # 7. Reason
     summary    = build_summary(profile)
     priority   = build_priority(profile, lead_type, has_matches=bool(scored), budget_ok=budget_ok)
     next_action = build_next_action(lead_type, n_matches=len(scored))
@@ -129,7 +111,7 @@ def process(inquiry: dict, retriever: MLSRetriever) -> LeadBrief:
         fallback_note=fallback_note,
     )
 
-    # 8. Assemble ─────────────────────────────────────────────────────────────
+    # 8. Assemble
     return assemble(
         profile=profile,
         lead_type=lead_type,
@@ -143,7 +125,7 @@ def process(inquiry: dict, retriever: MLSRetriever) -> LeadBrief:
     )
 
 
-# ── Helper ────────────────────────────────────────────────────────────────────
+# Helper 
 
 def _find_referenced_listing(retriever: MLSRetriever, text: str) -> dict | None:
     m = re.search(

@@ -1,16 +1,4 @@
-"""
-safety_agent.py
 
-Two responsibilities, both deterministic:
-
-1. detect_injection(text) — scan for prompt-hijacking attempts before the
-   message touches the LLM. An LLM is what injection attacks target; asking
-   it to police itself is circular.
-
-2. classify(profile) — route the lead to the right handler. Each class takes
-   a genuinely different path through the pipeline, which is what makes this
-   an agent rather than a single matcher.
-"""
 from __future__ import annotations
 
 import re
@@ -18,7 +6,7 @@ from enum import Enum
 
 from .lead_parser import BuyerProfile
 
-# ── Injection detection ───────────────────────────────────────────────────────
+# Injection detection
 
 _INJECTION_PATTERNS = [
     r"ignore (all )?(previous|prior|above) instructions",
@@ -48,7 +36,7 @@ def detect_injection(text: str) -> tuple[bool, str | None]:
     return True, text[start:end].strip()
 
 
-# ── Lead classification ───────────────────────────────────────────────────────
+# Lead classification 
 
 class LeadType(str, Enum):
     PROPERTY_SEARCH = "property_search"

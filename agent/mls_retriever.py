@@ -1,21 +1,4 @@
-"""
-mls_retriever.py
 
-The "tool" the agent calls to interact with the listing database.
-
-Two operations:
-  feasibility(profile) — non-price check: how many listings match the
-      structural requirements, and what's the cheapest? Used to catch
-      impossible budgets before wasting time searching.
-
-  search(profile) — hard-filter + return candidates.
-      If strict search is empty and a neighborhood was requested, widens
-      to the adjacent submarket group and flags it. That's the single
-      fallback step — one rung, clearly labeled, nothing fancier.
-
-PII note: owner_name and owner_phone are NOT loaded into Listing objects.
-They never enter the pipeline; there is structurally nothing to leak.
-"""
 from __future__ import annotations
 
 import math
@@ -26,9 +9,9 @@ import pandas as pd
 
 from .lead_parser import BuyerProfile
 
-# ── Constants ─────────────────────────────────────────────────────────────────
+# Constants
 
-# Known-adjacent market groups. Used only for the single neighborhood-widen fallback.
+
 _MARKET_GROUPS: list[list[str]] = [
     ["Brickell", "Downtown Miami", "Edgewater", "Wynwood"],
     ["Miami Beach", "South Beach", "Mid-Beach", "North Beach", "Bal Harbour", "Key Biscayne"],
@@ -42,7 +25,7 @@ MAX_RESULTS = 4
 MAX_SANE_PRICE = 60_000_000   # excludes the single $250M data outlier
 
 
-# ── Data model ────────────────────────────────────────────────────────────────
+# Data model
 
 @dataclass
 class Listing:
@@ -61,10 +44,8 @@ class Listing:
     days_on_market: Optional[int]
     description: str
     features: set[str] = field(default_factory=set)
-    # owner_name and owner_phone deliberately omitted
-
-
-# ── Loader ────────────────────────────────────────────────────────────────────
+    
+# Loader 
 
 def _to_int(v) -> Optional[int]:
     try:
@@ -105,7 +86,7 @@ def load_listings(csv_path: str) -> list[Listing]:
     return out
 
 
-# ── Retriever ─────────────────────────────────────────────────────────────────
+# Retriever 
 
 class MLSRetriever:
     def __init__(self, listings: list[Listing]):
@@ -144,17 +125,7 @@ class MLSRetriever:
         return {"count": len(pool), "min_price": min_price}
 
     def search(self, profile: BuyerProfile) -> tuple[list[Listing], str | None]:
-        """
-        Returns (listings, fallback_note).
-
-        Three-rung fallback, each clearly labeled so the realtor sees exactly
-        how far the result drifted from what the buyer asked for:
-          1. Strict: requested neighborhood + budget + type + must-haves
-          2. Widen neighborhood to adjacent submarket group
-          3. Drop property-type constraint (keep everything else)
-        Budget is never inflated — budget mismatch is handled by the feasibility
-        probe in the pipeline and surfaced as a heads-up flag, not hidden results.
-        """
+        
         budget = profile.effective_budget
         active = self._active()
         pool = [l for l in active if not budget or l.price <= budget]

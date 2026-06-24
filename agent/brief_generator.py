@@ -1,9 +1,3 @@
-"""
-brief_generator.py
-
-Assembles the LeadBrief dataclass from the outputs of every upstream module,
-then renders it as (a) a JSON-serialisable dict and (b) realtor-facing Markdown.
-"""
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
@@ -16,7 +10,7 @@ from .safety_agent import LeadType
 _BADGE = {Priority.HIGH: "🔥 HIGH", Priority.MEDIUM: "🟡 MEDIUM", Priority.LOW: "⚪ LOW"}
 
 
-# ── Data class ────────────────────────────────────────────────────────────────
+# Data class
 
 @dataclass
 class LeadBrief:
@@ -33,7 +27,7 @@ class LeadBrief:
     trace: list[str] = field(default_factory=list)   # reasoning steps for transparency
 
 
-# ── Assembler ─────────────────────────────────────────────────────────────────
+# Assembler
 
 def assemble(
     profile: BuyerProfile,
@@ -85,7 +79,7 @@ def _render(s: ScoredListing) -> dict:
     }
 
 
-# ── Renderers ─────────────────────────────────────────────────────────────────
+# Renderers 
 
 def to_dict(brief: LeadBrief) -> dict:
     d = asdict(brief)

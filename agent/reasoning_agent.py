@@ -1,15 +1,4 @@
-"""
-reasoning_agent.py
 
-Produces the human-facing reasoning layer of the brief:
-  - summary:      one crisp sentence describing the buyer and what they want
-  - heads_up:     flags the realtor needs before picking up the phone
-  - next_action:  concrete, type-aware recommendation
-  - priority:     HIGH / MEDIUM / LOW based on buyer readiness signals
-
-All deterministic — this is template logic, not generation. The LLM was used
-upstream (lead_parser) to understand intent; here we're just communicating it.
-"""
 from __future__ import annotations
 
 from enum import Enum
@@ -24,7 +13,7 @@ class Priority(str, Enum):
     LOW    = "low"
 
 
-# ── Summary ───────────────────────────────────────────────────────────────────
+# Summary
 
 def build_summary(profile: BuyerProfile) -> str:
     name = profile.buyer_name
@@ -67,7 +56,7 @@ def build_summary(profile: BuyerProfile) -> str:
     return " ".join([line] + extras)
 
 
-# ── Priority ──────────────────────────────────────────────────────────────────
+#  Priority 
 
 def build_priority(
     profile: BuyerProfile,
@@ -93,7 +82,7 @@ def build_priority(
     return Priority.HIGH if ready >= 2 else Priority.MEDIUM
 
 
-# ── Next action ───────────────────────────────────────────────────────────────
+# Next action
 
 def build_next_action(lead_type: LeadType, n_matches: int) -> str:
     if lead_type == LeadType.ADVICE_REQUEST:
@@ -129,7 +118,7 @@ def build_next_action(lead_type: LeadType, n_matches: int) -> str:
     )
 
 
-# ── Heads-up flags ────────────────────────────────────────────────────────────
+# Heads-up flags 
 
 def build_heads_up(
     profile: BuyerProfile,

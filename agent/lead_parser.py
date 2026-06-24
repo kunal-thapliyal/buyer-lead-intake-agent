@@ -1,16 +1,4 @@
-"""
-lead_parser.py
 
-Converts a free-text buyer inquiry into a structured BuyerProfile using Groq
-(llama-3.3-70b-versatile). Groq handles the fuzzy language understanding;
-the result is validated against a known schema before anything downstream
-sees it, so a hallucinated or garbled field fails loudly rather than
-corrupting a brief silently.
-
-This is where the LLM earns its place: interpreting rambling, chatty, or
-vague messages is exactly what it's good at. Safety-critical logic (injection
-detection, PII) stays deterministic in safety_agent.py.
-"""
 from __future__ import annotations
 
 import json
@@ -24,7 +12,7 @@ from groq import Groq
 client = Groq(api_key=os.environ["GROQ_API_KEY"])
 MODEL = "llama-3.3-70b-versatile"
 
-# ── Schema ───────────────────────────────────────────────────────────────────
+# Schema 
 
 @dataclass
 class BuyerProfile:
@@ -55,7 +43,7 @@ class BuyerProfile:
         return self.budget_stretch or self.budget_max
 
 
-# ── Groq prompt ──────────────────────────────────────────────────────────────
+# Groq prompt
 
 _SYSTEM = """\
 You extract structured real-estate buyer requirements from inquiry messages.
