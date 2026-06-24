@@ -1,0 +1,46 @@
+{
+  "lead_id": "LEAD-2026-002",
+  "buyer_name": "Patricia and David Chen",
+  "channel": "website_form",
+  "received_at": "2026-06-19T11:32:00-04:00",
+  "lead_type": "property_search",
+  "priority": "medium",
+  "summary": "Patricia and David Chen wants a 4+ bedroom home in Coral Gables, Pinecrest, budget up to $2,300,000. Non-negotiables: Pool. flexible.",
+  "heads_up": [
+    "Items buyer wants that can't be filtered from the MLS feed — verify manually: Elementary school quality/zoning",
+    "Family of four",
+    "Kids in elementary school",
+    "Still unknown — ask on first contact: property_types, baths_min."
+  ],
+  "recommendations": [
+    {
+      "listing_id": "MLS-100298",
+      "mls_number": "A80610004",
+      "address": "2470 Ponce de Leon Boulevard",
+      "neighborhood": "Coral Gables",
+      "price": 1458000,
+      "bedrooms": 4.0,
+      "bathrooms": 5.0,
+      "sqft": 2769,
+      "property_type": "Villa",
+      "status": "Active",
+      "days_on_market": 38,
+      "match_score": 63,
+      "why_it_matches": [
+        "In requested neighborhood (Coral Gables).",
+        "4 BR — meets minimum.",
+        "Has all must-haves: Pool.",
+        "$1,458,000 — 63% of budget, strong fit."
+      ],
+      "gaps": []
+    }
+  ],
+  "next_action": "Call within 24 h. Lead with the top 1 listing(s) below, confirm the unverifiable items flagged above, and offer to book showings.",
+  "trace": [
+    "Safety: no injection detected.",
+    "Parser: extracted beds=4–None, budget=$2300000, nbhd=['Coral Gables', 'Pinecrest'], must=['Pool'], nice=[].",
+    "Classifier: property_search.",
+    "Feasibility: 1 listings meet non-price criteria.",
+    "Search: 1 candidate(s)."
+  ]
+}

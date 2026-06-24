@@ -1,0 +1,48 @@
+{
+  "lead_id": "LEAD-2026-003",
+  "buyer_name": "Anonymous (form not filled)",
+  "channel": "website_form",
+  "received_at": "2026-06-19T13:05:00-04:00",
+  "lead_type": "property_search",
+  "priority": "low",
+  "summary": "An unnamed buyer wants a 4+ bedroom home in Downtown Miami, Brickell, budget up to $250,000. Non-negotiables: Pool, Ocean View. this week.",
+  "heads_up": [
+    "💰 BUDGET MISMATCH: Cheapest matching listing is $2,200,000, above the buyer's stated budget. Reset expectations on first call.",
+    "No contact info on file — capture name and phone before investing time.",
+    "Still unknown — ask on first contact: property_types."
+  ],
+  "recommendations": [
+    {
+      "listing_id": "MLS-100098",
+      "mls_number": "A75709924",
+      "address": "3381 Bay Road",
+      "neighborhood": "Brickell",
+      "price": 2200000,
+      "bedrooms": 8.0,
+      "bathrooms": 4.0,
+      "sqft": 3723,
+      "property_type": "Multi-Family",
+      "status": "Active",
+      "days_on_market": 25,
+      "match_score": 41,
+      "why_it_matches": [
+        "In requested neighborhood (Brickell).",
+        "8 BR — exceeds the 4-BR minimum.",
+        "Has all must-haves: Pool, Ocean View.",
+        "$2,200,000.",
+        "Freshly listed (25 days on market)."
+      ],
+      "gaps": [
+        "OVER BUDGET: $2,200,000 vs buyer's $250,000."
+      ]
+    }
+  ],
+  "next_action": "Call within 24 h. Lead with the top 1 listing(s) below, confirm the unverifiable items flagged above, and offer to book showings.",
+  "trace": [
+    "Safety: no injection detected.",
+    "Parser: extracted beds=4–4, budget=$250000, nbhd=['Downtown Miami', 'Brickell'], must=['Pool', 'Ocean View'], nice=[].",
+    "Classifier: property_search.",
+    "Feasibility: cheapest match $2,200,000 > budget $250,000 — mismatch flagged.",
+    "Search [budget-mismatch mode]: showing 1 closest over-budget option(s) for context."
+  ]
+}

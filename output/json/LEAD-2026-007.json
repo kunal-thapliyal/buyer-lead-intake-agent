@@ -1,0 +1,115 @@
+{
+  "lead_id": "LEAD-2026-007",
+  "buyer_name": "Elena Vasquez",
+  "channel": "website_form",
+  "received_at": "2026-06-20T08:42:00-04:00",
+  "lead_type": "property_search",
+  "priority": "medium",
+  "summary": "Elena Vasquez wants a 2+ bedroom home in Aventura, Coral Gables, budget up to $600,000. Preferred: Single Family, Elevator.",
+  "heads_up": [
+    "Items buyer wants that can't be filtered from the MLS feed — verify manually: Single-story; Elevator access; Near pharmacy/grocery/medical; Proximity to commute",
+    "Elderly parents",
+    "Out of state move",
+    "Still unknown — ask on first contact: property_types, must_haves."
+  ],
+  "recommendations": [
+    {
+      "listing_id": "MLS-100017",
+      "mls_number": "A24464073",
+      "address": "4883 Hibiscus Drive",
+      "neighborhood": "Aventura",
+      "price": 485000,
+      "bedrooms": 4.0,
+      "bathrooms": 4.5,
+      "sqft": 2671,
+      "property_type": "Villa",
+      "status": "Active",
+      "days_on_market": 131,
+      "match_score": 54,
+      "why_it_matches": [
+        "In requested neighborhood (Aventura).",
+        "4 BR — exceeds the 2-BR minimum.",
+        "$485,000 — 81% of budget, strong fit."
+      ],
+      "gaps": [
+        "Missing preferred features: Single Family, Elevator.",
+        "On market 131 days — may have negotiating room."
+      ]
+    },
+    {
+      "listing_id": "MLS-100161",
+      "mls_number": "A29232735",
+      "address": "7504 Harbor Drive",
+      "neighborhood": "Aventura",
+      "price": 445000,
+      "bedrooms": 4.0,
+      "bathrooms": 2.0,
+      "sqft": 1979,
+      "property_type": "Condo",
+      "status": "Active",
+      "days_on_market": 56,
+      "match_score": 54,
+      "why_it_matches": [
+        "In requested neighborhood (Aventura).",
+        "4 BR — exceeds the 2-BR minimum.",
+        "$445,000 — 74% of budget, strong fit."
+      ],
+      "gaps": [
+        "Missing preferred features: Single Family, Elevator."
+      ]
+    },
+    {
+      "listing_id": "MLS-100281",
+      "mls_number": "A66434872",
+      "address": "8411 Harbor Drive",
+      "neighborhood": "Aventura",
+      "price": 452000,
+      "bedrooms": 4.0,
+      "bathrooms": 1.5,
+      "sqft": 2100,
+      "property_type": "Condo",
+      "status": "Active",
+      "days_on_market": 71,
+      "match_score": 54,
+      "why_it_matches": [
+        "In requested neighborhood (Aventura).",
+        "4 BR — exceeds the 2-BR minimum.",
+        "$452,000 — 75% of budget, strong fit."
+      ],
+      "gaps": [
+        "Missing preferred features: Single Family, Elevator."
+      ]
+    },
+    {
+      "listing_id": "MLS-100284",
+      "mls_number": "A44537812",
+      "address": "5226 Jefferson Avenue",
+      "neighborhood": "Aventura",
+      "price": 443000,
+      "bedrooms": 4.0,
+      "bathrooms": 4.5,
+      "sqft": 2728,
+      "property_type": "Single Family",
+      "status": "Active",
+      "days_on_market": 154,
+      "match_score": 54,
+      "why_it_matches": [
+        "In requested neighborhood (Aventura).",
+        "4 BR — exceeds the 2-BR minimum.",
+        "$443,000 — 74% of budget, strong fit."
+      ],
+      "gaps": [
+        "Missing preferred features: Single Family, Elevator.",
+        "On market 154 days — may have negotiating room."
+      ]
+    }
+  ],
+  "next_action": "Call within 24 h. Lead with the top 4 listing(s) below, confirm the unverifiable items flagged above, and offer to book showings.",
+  "trace": [
+    "Safety: no injection detected.",
+    "Parser: extracted beds=2–2, budget=$600000, nbhd=['Aventura', 'Coral Gables'], must=[], nice=['Single Family', 'Elevator'].",
+    "Classifier: property_search.",
+    "Feasibility: 30 listings meet non-price criteria.",
+    "Search: 4 candidate(s)."
+  ]
+}

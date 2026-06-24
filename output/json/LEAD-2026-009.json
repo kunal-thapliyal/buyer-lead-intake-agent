@@ -1,0 +1,47 @@
+{
+  "lead_id": "LEAD-2026-009",
+  "buyer_name": "Luis Hernandez",
+  "channel": "referral",
+  "received_at": "2026-06-20T11:47:00-04:00",
+  "lead_type": "property_search",
+  "priority": "low",
+  "summary": "Luis Hernandez wants a 2–3 bedroom Townhouse in Brickell, budget up to $750,000. Cash.",
+  "heads_up": [
+    "💰 BUDGET MISMATCH: Cheapest matching listing is $1,055,000, above the buyer's stated budget. Reset expectations on first call.",
+    "Items buyer wants that can't be filtered from the MLS feed — verify manually: at least 2 parking spots"
+  ],
+  "recommendations": [
+    {
+      "listing_id": "MLS-100009",
+      "mls_number": "A27318510",
+      "address": "1512 Brickell Avenue",
+      "neighborhood": "Brickell",
+      "price": 1055000,
+      "bedrooms": 4.0,
+      "bathrooms": 3.5,
+      "sqft": 2338,
+      "property_type": "Townhouse",
+      "status": "Active",
+      "days_on_market": 152,
+      "match_score": 48,
+      "why_it_matches": [
+        "In requested neighborhood (Brickell).",
+        "Property type matches (Townhouse).",
+        "4 BR — exceeds the 2-BR minimum.",
+        "$1,055,000."
+      ],
+      "gaps": [
+        "OVER BUDGET: $1,055,000 vs buyer's $750,000.",
+        "On market 152 days — may have negotiating room."
+      ]
+    }
+  ],
+  "next_action": "Call within 24 h. Lead with the top 1 listing(s) below, confirm the unverifiable items flagged above, and offer to book showings.",
+  "trace": [
+    "Safety: no injection detected.",
+    "Parser: extracted beds=2–3, budget=$750000, nbhd=['Brickell'], must=[], nice=[].",
+    "Classifier: property_search.",
+    "Feasibility: cheapest match $1,055,000 > budget $750,000 — mismatch flagged.",
+    "Search [budget-mismatch mode]: showing 1 closest over-budget option(s) for context."
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "lead_id": "LEAD-2026-012",
+  "buyer_name": "Michael Reeves",
+  "channel": "referral",
+  "received_at": "2026-06-20T16:18:00-04:00",
+  "lead_type": "investor",
+  "priority": "medium",
+  "summary": "Michael Reeves wants a Condo/Multi-Family, budget up to $900,000. 6 months.",
+  "heads_up": [
+    "Items buyer wants that can't be filtered from the MLS feed — verify manually: cash-flowing",
+    "cash-flowing rental properties",
+    "open to needing some work",
+    "Still unknown — ask on first contact: bedrooms, baths."
+  ],
+  "recommendations": [
+    {
+      "listing_id": "MLS-100002",
+      "mls_number": "A92048427",
+      "address": "7465 Michigan Avenue",
+      "neighborhood": "Edgewater",
+      "price": 635000,
+      "bedrooms": 4.0,
+      "bathrooms": 4.0,
+      "sqft": 2010,
+      "property_type": "Multi-Family",
+      "status": "Active",
+      "days_on_market": 152,
+      "match_score": 30,
+      "why_it_matches": [
+        "Neighborhood: Edgewater.",
+        "Property type matches (Multi-Family).",
+        "$635,000 — 71% of budget, strong fit."
+      ],
+      "gaps": [
+        "On market 152 days — may have negotiating room."
+      ]
+    },
+    {
+      "listing_id": "MLS-100008",
+      "mls_number": "A86868379",
+      "address": "6909 Bay Harbor Terrace",
+      "neighborhood": "North Miami",
+      "price": 382000,
+      "bedrooms": 5.0,
+      "bathrooms": 3.0,
+      "sqft": 2778,
+      "property_type": "Multi-Family",
+      "status": "Active",
+      "days_on_market": 79,
+      "match_score": 18,
+      "why_it_matches": [
+        "Neighborhood: North Miami.",
+        "Property type matches (Multi-Family).",
+        "$382,000 — well under budget; verify size meets expectations."
+      ],
+      "gaps": []
+    },
+    {
+      "listing_id": "MLS-100020",
+      "mls_number": "A25492573",
+      "address": "8388 SW 27th Avenue",
+      "neighborhood": "Edgewater",
+      "price": 459000,
+      "bedrooms": 2.0,
+      "bathrooms": 1.0,
+      "sqft": 1250,
+      "property_type": "Condo",
+      "status": "Active",
+      "days_on_market": 117,
+      "match_score": 18,
+      "why_it_matches": [
+        "Neighborhood: Edgewater.",
+        "Property type matches (Condo).",
+        "$459,000 — well under budget; verify size meets expectations."
+      ],
+      "gaps": []
+    },
+    {
+      "listing_id": "MLS-100021",
+      "mls_number": "A75874779",
+      "address": "4448 Crandon Boulevard",
+      "neighborhood": "Wynwood",
+      "price": 502000,
+      "bedrooms": 2.0,
+      "bathrooms": 1.5,
+      "sqft": 1633,
+      "property_type": "Condo",
+      "status": "Active",
+      "days_on_market": 35,
+      "match_score": 18,
+      "why_it_matches": [
+        "Neighborhood: Wynwood.",
+        "Property type matches (Condo).",
+        "$502,000 — well under budget; verify size meets expectations."
+      ],
+      "gaps": []
+    }
+  ],
+  "next_action": "Position yourself as an investment-focused agent. Share the 4 candidate(s) with rent estimates and cap-rate context. Ask about target return, hold period, and whether they need management.",
+  "trace": [
+    "Safety: no injection detected.",
+    "Parser: extracted beds=None–None, budget=$900000, nbhd=[], must=[], nice=[].",
+    "Classifier: investor.",
+    "Feasibility: 90 listings meet non-price criteria.",
+    "Search: 4 candidate(s)."
+  ]
+}

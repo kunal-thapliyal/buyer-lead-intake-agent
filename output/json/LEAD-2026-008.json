@@ -1,0 +1,21 @@
+{
+  "lead_id": "LEAD-2026-008",
+  "buyer_name": "Jennifer Walsh",
+  "channel": "website_form",
+  "received_at": "2026-06-20T10:15:00-04:00",
+  "lead_type": "property_search",
+  "priority": "low",
+  "summary": "Jennifer Walsh wants a 4+ bedroom Single Family in Coconut Grove, Coral Gables, budget up to $1,400,000. Non-negotiables: Pool, Home Office.",
+  "heads_up": [
+    "Items buyer wants that can't be filtered from the MLS feed — verify manually: good schools"
+  ],
+  "recommendations": [],
+  "next_action": "Nothing in inventory matches today. Call to re-scope — budget, must-haves, or area — and set up a saved search.",
+  "trace": [
+    "Safety: no injection detected.",
+    "Parser: extracted beds=4–None, budget=$1400000, nbhd=['Coconut Grove', 'Coral Gables'], must=['Pool', 'Home Office'], nice=[].",
+    "Classifier: property_search.",
+    "Feasibility: 0 listings meet non-price criteria.",
+    "Search: 0 candidate(s)."
+  ]
+}

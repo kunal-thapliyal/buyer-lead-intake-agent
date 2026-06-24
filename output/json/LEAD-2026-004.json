@@ -1,0 +1,22 @@
+{
+  "lead_id": "LEAD-2026-004",
+  "buyer_name": "Sofia Reyes",
+  "channel": "referral",
+  "received_at": "2026-06-19T14:48:00-04:00",
+  "lead_type": "vague",
+  "priority": "low",
+  "summary": "Sofia Reyes wants a home.",
+  "heads_up": [
+    "investment property",
+    "Still unknown — ask on first contact: budget, bedrooms, neighborhoods."
+  ],
+  "recommendations": [],
+  "next_action": "Send a short discovery note: ask for budget, bedroom count, target neighborhoods, and timeline before searching.",
+  "trace": [
+    "Safety: no injection detected.",
+    "Parser: extracted beds=None–None, budget=$None, nbhd=[], must=[], nice=[].",
+    "Classifier: vague.",
+    "Feasibility: 207 listings meet non-price criteria.",
+    "Search: skipped — vague."
+  ]
+}

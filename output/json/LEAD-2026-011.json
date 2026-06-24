@@ -1,0 +1,47 @@
+{
+  "lead_id": "LEAD-2026-011",
+  "buyer_name": "Priya Sharma",
+  "channel": "website_form",
+  "received_at": "2026-06-20T14:55:00-04:00",
+  "lead_type": "property_search",
+  "priority": "low",
+  "summary": "Priya Sharma wants a 1–2 bedroom Condo, budget up to $400,000. Non-negotiables: Pet Friendly. First-time buyer.",
+  "heads_up": [
+    "💰 BUDGET MISMATCH: Cheapest matching listing is $521,000, above the buyer's stated budget. Reset expectations on first call.",
+    "Items buyer wants that can't be filtered from the MLS feed — verify manually: commute time; elevator access"
+  ],
+  "recommendations": [
+    {
+      "listing_id": "MLS-100035",
+      "mls_number": "A90973889",
+      "address": "9679 Coral Way",
+      "neighborhood": "Brickell",
+      "price": 521000,
+      "bedrooms": 1.0,
+      "bathrooms": 1.5,
+      "sqft": 1060,
+      "property_type": "Condo",
+      "status": "Active",
+      "days_on_market": 35,
+      "match_score": 27,
+      "why_it_matches": [
+        "Neighborhood: Brickell.",
+        "Property type matches (Condo).",
+        "1 BR — within the 1–2 range.",
+        "Has all must-haves: Pet Friendly.",
+        "$521,000."
+      ],
+      "gaps": [
+        "OVER BUDGET: $521,000 vs buyer's $400,000."
+      ]
+    }
+  ],
+  "next_action": "Call within 24 h. Lead with the top 1 listing(s) below, confirm the unverifiable items flagged above, and offer to book showings.",
+  "trace": [
+    "Safety: no injection detected.",
+    "Parser: extracted beds=1–2, budget=$400000, nbhd=[], must=['Pet Friendly'], nice=[].",
+    "Classifier: property_search.",
+    "Feasibility: cheapest match $521,000 > budget $400,000 — mismatch flagged.",
+    "Search [budget-mismatch mode]: showing 1 closest over-budget option(s) for context."
+  ]
+}

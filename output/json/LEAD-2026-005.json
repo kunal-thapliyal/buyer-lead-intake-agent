@@ -1,0 +1,40 @@
+{
+  "lead_id": "LEAD-2026-005",
+  "buyer_name": "Robert Klein",
+  "channel": "website_form",
+  "received_at": "2026-06-19T16:21:00-04:00",
+  "lead_type": "advice_request",
+  "priority": "low",
+  "summary": "Robert Klein wants a home, budget ~$950,000 (can stretch to $1,250,000).",
+  "heads_up": [
+    "Items buyer wants that can't be filtered from the MLS feed — verify manually: sellers' motivation",
+    "Still unknown — ask on first contact: bedrooms, neighborhoods, property_types."
+  ],
+  "recommendations": [
+    {
+      "listing_id": "MLS-100169",
+      "address": "1820 Bay Road",
+      "neighborhood": "Miami Beach",
+      "price": 1250000,
+      "bedrooms": 4.0,
+      "bathrooms": 3.0,
+      "property_type": "Single Family",
+      "status": "Active",
+      "days_on_market": 35,
+      "context_only": true,
+      "why_it_matches": [
+        "Buyer-referenced listing. Asking $1,250,000, status: Active, 35 days on market. Seller identity not shown."
+      ],
+      "gaps": []
+    }
+  ],
+  "next_action": "Call to build rapport. Offer to run a CMA for the property rather than quoting an offer number cold. Do not share seller motivation in writing — discuss strategy live.",
+  "trace": [
+    "Safety: no injection detected.",
+    "Parser: extracted beds=None–None, budget=$950000, nbhd=[], must=[], nice=[].",
+    "Classifier: advice_request.",
+    "Feasibility: 207 listings meet non-price criteria.",
+    "Advice: found referenced listing (1820 Bay Road).",
+    "Search: skipped — advice request routes to human."
+  ]
+}

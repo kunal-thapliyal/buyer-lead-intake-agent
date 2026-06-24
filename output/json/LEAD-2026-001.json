@@ -1,0 +1,98 @@
+{
+  "lead_id": "LEAD-2026-001",
+  "buyer_name": "Marcus Thompson",
+  "channel": "website_form",
+  "received_at": "2026-06-19T09:14:00-04:00",
+  "lead_type": "property_search",
+  "priority": "high",
+  "summary": "Marcus Thompson wants a 2–3 bedroom Condo in Brickell, Downtown Miami, budget up to $700,000. Preferred: Gym, Balcony. August.",
+  "heads_up": [
+    "Items buyer wants that can't be filtered from the MLS feed — verify manually: city view",
+    "city view",
+    "Still unknown — ask on first contact: baths_min, financing."
+  ],
+  "recommendations": [
+    {
+      "listing_id": "MLS-100261",
+      "mls_number": "A28058430",
+      "address": "4759 Hibiscus Drive",
+      "neighborhood": "Downtown Miami",
+      "price": 594000,
+      "bedrooms": 3.0,
+      "bathrooms": 3.0,
+      "sqft": 1992,
+      "property_type": "Condo",
+      "status": "Active",
+      "days_on_market": 28,
+      "match_score": 88,
+      "why_it_matches": [
+        "In requested neighborhood (Downtown Miami).",
+        "Property type matches (Condo).",
+        "3 BR — within the 2–3 range.",
+        "Preferred features present: Gym.",
+        "$594,000 — 85% of budget, strong fit.",
+        "Freshly listed (28 days on market)."
+      ],
+      "gaps": [
+        "Missing preferred features: Balcony."
+      ]
+    },
+    {
+      "listing_id": "MLS-100277",
+      "mls_number": "A15140967",
+      "address": "7267 Biscayne Boulevard #725",
+      "neighborhood": "Brickell",
+      "price": 648000,
+      "bedrooms": 3.0,
+      "bathrooms": 2.0,
+      "sqft": 1427,
+      "property_type": "Condo",
+      "status": "Active",
+      "days_on_market": 133,
+      "match_score": 83,
+      "why_it_matches": [
+        "In requested neighborhood (Brickell).",
+        "Property type matches (Condo).",
+        "3 BR — within the 2–3 range.",
+        "Preferred features present: Gym.",
+        "$648,000 — 93% of budget, strong fit."
+      ],
+      "gaps": [
+        "Missing preferred features: Balcony.",
+        "On market 133 days — may have negotiating room."
+      ]
+    },
+    {
+      "listing_id": "MLS-100273",
+      "mls_number": "A74819756",
+      "address": "9796 Alhambra Circle",
+      "neighborhood": "Downtown Miami",
+      "price": 539000,
+      "bedrooms": 2.0,
+      "bathrooms": 2.5,
+      "sqft": 1042,
+      "property_type": "Condo",
+      "status": "Active",
+      "days_on_market": 25,
+      "match_score": 80,
+      "why_it_matches": [
+        "In requested neighborhood (Downtown Miami).",
+        "Property type matches (Condo).",
+        "2 BR — within the 2–3 range.",
+        "$539,000 — 77% of budget, strong fit.",
+        "Freshly listed (25 days on market)."
+      ],
+      "gaps": [
+        "Missing preferred features: Gym, Balcony."
+      ]
+    }
+  ],
+  "next_action": "Call within 24 h. Lead with the top 3 listing(s) below, confirm the unverifiable items flagged above, and offer to book showings.",
+  "trace": [
+    "Safety: no injection detected.",
+    "Parser: extracted beds=2–3, budget=$700000, nbhd=['Brickell', 'Downtown Miami'], must=[], nice=['Gym', 'Balcony'].",
+    "Classifier: property_search.",
+    "Feasibility: 7 listings meet non-price criteria.",
+    "Search: 3 candidate(s)."
+  ]
+}
