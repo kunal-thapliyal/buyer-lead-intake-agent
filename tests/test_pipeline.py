@@ -1,19 +1,4 @@
-"""
-tests/test_pipeline.py
 
-Tests that run without a live Groq API key.
-
-The key insight: Groq (lead_parser) handles intent understanding — that's
-its job. What we need to test is everything *around* it:
-  - injection detection (deterministic, safety-critical)
-  - routing / classification logic
-  - MLS retrieval: hard filters, feasibility probe, single fallback
-  - ranking: scoring logic and score ordering
-  - PII guarantee: owner data never appears in output
-
-Run:  python -m pytest tests/ -q
-      python tests/test_pipeline.py   (no pytest dependency)
-"""
 from __future__ import annotations
 
 import os
@@ -32,7 +17,7 @@ from agent.safety_agent import LeadType, classify, detect_injection
 DATA = os.path.join(os.path.dirname(__file__), "..", "data", "miami_mls_listings.csv")
 
 
-# ── Fixtures ──────────────────────────────────────────────────────────────────
+# Fixtures 
 
 def _profile(**kwargs) -> BuyerProfile:
     defaults = dict(
@@ -56,7 +41,7 @@ def _listing(**kwargs) -> Listing:
     return Listing(**defaults)
 
 
-# ── Injection detection ───────────────────────────────────────────────────────
+#  Injection detection 
 
 def test_injection_caught():
     hit, snip = detect_injection(
@@ -72,7 +57,7 @@ def test_clean_message_passes():
     assert hit is False
 
 
-# ── Classification ────────────────────────────────────────────────────────────
+#  Classification 
 
 def test_vague_with_no_criteria():
     p = _profile(raw_message="hi i'm interested in buying something")
@@ -99,7 +84,7 @@ def test_low_quality_anonymous_no_criteria():
     assert classify(p, anonymous=True) == LeadType.LOW_QUALITY
 
 
-# ── MLS retriever ─────────────────────────────────────────────────────────────
+#  MLS retriever 
 
 def test_feasibility_probe():
     listings = [
@@ -127,14 +112,14 @@ def test_must_have_is_hard_filter():
 
 def test_pii_not_in_listing_objects():
     listings = load_listings(DATA)
-    # Listing dataclass deliberately has no owner_name or owner_phone field
+    
     l = listings[0]
     assert not hasattr(l, "owner_name")
     assert not hasattr(l, "owner_phone")
 
 
 def test_neighborhood_widen_fallback():
-    # Single listing in Edgewater (adjacent to Brickell)
+    
     listings = [_listing(neighborhood="Edgewater")]
     r = MLSRetriever(listings)
     p = _profile(beds_min=3, neighborhoods=["Brickell"], budget_max=1_000_000)
@@ -143,7 +128,7 @@ def test_neighborhood_widen_fallback():
     assert note is not None and "widened" in note.lower()
 
 
-# ── Ranker ────────────────────────────────────────────────────────────────────
+#  Ranker 
 
 def test_exact_neighborhood_outranks_adjacent():
     exact    = _listing(neighborhood="Brickell",    price=650_000)
@@ -161,7 +146,7 @@ def test_must_haves_confirmed_in_reasons():
     assert "Pool" in reasons_text
 
 
-# ── Runner ────────────────────────────────────────────────────────────────────
+# Runner 
 
 if __name__ == "__main__":
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]

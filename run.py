@@ -1,15 +1,3 @@
-#!/usr/bin/env python3
-"""
-run.py — generate Lead Briefs for all inquiries.
-
-Usage:
-    python run.py
-    python run.py --inquiries data/sample_buyer_inquiries.json
-    python run.py --mls data/miami_mls_listings.csv --out output/
-
-Requires:
-    GROQ_API_KEY set in environment (or in a .env file).
-"""
 import argparse
 import csv
 import json
