@@ -1,6 +1,10 @@
 # Buyer Lead Intake Agent — Written Explanation
 
-## 1. Approach and design decisions
+## 1. Approach and design 
+
+<p align="center">
+  <img src="architecture.png" width="950">
+</p>
 
 The task is triage + retrieval, not a chatbot. A realtor wants to open a
 lead, know in five seconds whether it's worth a call, and have the talking
@@ -139,10 +143,7 @@ management preferences.
 
 ## 3. How I used AI tools
 
-I used Claude as a coding assistant throughout — for drafting module stubs,
-iterating on the extraction prompt, and debugging edge cases. The most
-productive pattern was **generate → run against real data → read actual output →
-fix**, not generate and trust.
+I used Claude as a coding assistant for drafting module stubs, iterating on the extraction prompt, and debugging edge cases. The most productive pattern was **generate → run against real data → read actual output → fix**, not generate and trust.
 
 Every defect listed in the walkthrough above (the $250M price outlier, the
 "6 months → $6M" budget bug, "cat" matching inside "relocating", the proximity-
@@ -175,3 +176,8 @@ and tune the scoring weights from that signal instead of hand-set constants.
 **Clarification path for vague leads.** Instead of just saying "send a discovery
 note," generate the specific questions to ask based on what's missing
 (budget vs. area vs. bedrooms), personalized to what the buyer *did* say.
+
+---
+
+## 5. Declaration
+I used LLM-based coding assistants, including Claude and ChatGPT, as engineering aids for brainstorming module boundaries, reviewing code quality, refining prompts, improving documentation, and exploring implementation alternatives.
