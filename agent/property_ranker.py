@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 from .lead_parser import BuyerProfile
 from .mls_retriever import Listing
 
-# ── Weights ───────────────────────────────────────────────────────────────────
+# Weights 
 _W = {
     "neighborhood_exact":    30,
     "neighborhood_adjacent": 12,
@@ -21,8 +21,7 @@ _W = {
 }
 
 
-# ── Output type ───────────────────────────────────────────────────────────────
-
+# Output type 
 @dataclass
 class ScoredListing:
     listing: Listing
@@ -31,7 +30,7 @@ class ScoredListing:
     gaps: list[str] = field(default_factory=list)
 
 
-# ── Ranker ────────────────────────────────────────────────────────────────────
+# Ranker 
 
 def rank(
     listings: list[Listing],
